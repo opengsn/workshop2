@@ -1,5 +1,12 @@
 const ethers = require('ethers')
+const { formatEther } = require( 'ethers/lib/utils')
 const { RelayProvider } = require( '@opengsn/provider')
+const paymasterArtifact = require('../build/contracts/WhitelistPaymaster.json')
+let whitelistPaymasterAddress
+
+// In truffle console run:
+// const pm = await WhitelistPaymaster.deployed()
+// pm.whitelistSender('0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1')
 
 const paymasterAddress = require( '../build/gsn/Paymaster').address
 const contractArtifact = require('../build/contracts/CaptureTheFlag.json')
@@ -27,7 +34,7 @@ async function initContract() {
     provider: window.ethereum,
     config: {
         //loggerConfiguration: { logLevel: 'error' },
-        paymasterAddress
+        paymasterAddress: whitelistPaymasterAddress
     }
   }).init()
 

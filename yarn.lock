@@ -586,6 +586,28 @@
   dependencies:
     "@openzeppelin/contracts" "^3.4.0-solc-0.7"
 
+"@opengsn/dev@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@opengsn/dev/-/dev-2.2.2.tgz#29c22828d9cf7f53ebcb716f096a284bcfb803c2"
+  integrity sha512-2SW0/nufKlbVVg4P/G94YuwvuYe4BNBqfq9EciT31nIFiIc+xmBwRNAB05GQhUdL6l6eeTdCXQN7+78R6u7NoA==
+  dependencies:
+    "@opengsn/cli" "^2.2.2"
+    "@opengsn/contracts" "^2.2.2"
+    "@opengsn/provider" "^2.2.2"
+    "@opengsn/relay" "^2.2.2"
+
+"@opengsn/paymasters@^2.2.2-rc.1":
+  version "2.2.2-rc.1"
+  resolved "https://registry.yarnpkg.com/@opengsn/paymasters/-/paymasters-2.2.2-rc.1.tgz#add7677548d6011d6a82ec1b2c399e6ae3b8dbdd"
+  integrity sha512-iNRTrzz//7rUCgIwQ6aLhobkpvaKeDmSXmaEXH1SQPe7I+HQG4s2ejela4XsFmxuXKdC+sOxXdVgvvuFG+W0lQ==
+  dependencies:
+    "@opengsn/common" "^2.2.2"
+    "@opengsn/contracts" "^2.2.2"
+    "@opengsn/dev" "^2.2.2"
+    "@opengsn/provider" "^2.2.2"
+    "@openzeppelin/contracts" "^3.4.0-solc-0.7"
+    ethereumjs-util "^6.1.0"
+
 "@opengsn/provider@^2.2.2":
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/@opengsn/provider/-/provider-2.2.2.tgz#f10d51449195c5729a6d23eb0c0933356d16f1cd"
