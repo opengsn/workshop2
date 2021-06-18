@@ -1,5 +1,7 @@
 const ethers = require('ethers')
+const { RelayProvider } = require( '@opengsn/provider')
 
+const paymasterAddress = require( '../build/gsn/Paymaster').address
 const contractArtifact = require('../build/contracts/CaptureTheFlag.json')
 const contractAbi = contractArtifact.abi
 
@@ -21,7 +23,15 @@ async function initContract() {
   })
   const networkId = await window.ethereum.request({method: 'net_version'})
 
-  provider = new ethers.providers.Web3Provider(window.ethereum)
+  const gsnProvider = await RelayProvider.newProvider( {
+    provider: window.ethereum,
+    config: {
+        //loggerConfiguration: { logLevel: 'error' },
+        paymasterAddress
+    }
+  }).init()
+
+  provider = new ethers.providers.Web3Provider(gsnProvider)
 
   const network = await provider.getNetwork()
   const artifactNetwork = contractArtifact.networks[networkId]
